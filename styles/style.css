@@ -1,7 +1,8 @@
 body 
 {
 	font-family: 'Roboto', sans-serif;
-    background-color: #fdfdfd;
+    background-color: #222222;
+    color: aliceblue;
     max-width: 1400px;
     margin: auto;
 }
