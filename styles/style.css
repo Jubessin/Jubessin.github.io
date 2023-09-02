@@ -20,7 +20,12 @@ nav
     border-bottom: 1px solid #303b51;
 }
 
-.nav-list-container
+nav.hidden
+{
+    top: -70px;
+}
+
+.nav-bar
 {
     margin-left: auto;
     margin-right: 30px;
