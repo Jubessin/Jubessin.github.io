@@ -1,5 +1,8 @@
+const PROJECT_VERSION = 'v0.1.0';
+
 let lastScrollY = window.scrollY;
 let nav = document.getElementById('nav');
+let project_version = document.getElementById('project-version');
 
 function sendEmail()
 {
@@ -22,3 +25,5 @@ window.addEventListener('scroll', function()
     }
     lastScrollY = scrollY;
 });
+
+project_version.textContent = PROJECT_VERSION;
