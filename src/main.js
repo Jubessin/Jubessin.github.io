@@ -1,7 +1,8 @@
-const PROJECT_VERSION = 'v0.1.0';
+import { PROJECT_VERSION } from "./constants.js";
 
 let lastScrollY = window.scrollY;
 let nav = document.getElementById('nav');
+let contact_button = document.getElementById('contact-button');
 let project_version = document.getElementById('project-version');
 
 function sendEmail()
@@ -25,5 +26,7 @@ window.addEventListener('scroll', function()
     }
     lastScrollY = scrollY;
 });
+
+contact_button.onclick = sendEmail;
 
 project_version.textContent = PROJECT_VERSION;
