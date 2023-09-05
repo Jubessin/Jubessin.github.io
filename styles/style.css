@@ -5,11 +5,18 @@
     --text-color-important: white;
 }
 
+html, body, main {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: var(--background-color);
-	font-family: Calibri, sans-serif;
-    color: var(--text-color);
     margin: auto;
+    color: var(--text-color);
+	font-family: Calibri, sans-serif;
+    background-color: var(--background-color);
 }
 
 nav {
@@ -25,6 +32,7 @@ p {
 }
 
 section {
+    min-height: 100%;
     margin-left: 490px;
     margin-right: 30px;
 }
@@ -122,8 +130,8 @@ section {
 
 .experience-report {
     right: 0;
-    border-radius: 12px;
     position: absolute;
+    border-radius: 12px;
     text-decoration: none;
     margin: 30px 55px 0px 0px;
     border: 2px solid #b4c7e7;
@@ -167,18 +175,63 @@ section {
     margin: 20px 20px 20px 0px;
 }
 
+/* Contact */
+.contact-section {
+    margin: 0;
+    display: flex;
+    margin-left: 680px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-container {
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    text-decoration: none;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    padding-left: 2px;
+    padding-top: 30px;
+    margin-right: 60px;
+    padding-bottom: 15px;
+}
+
+.contact-pill {
+    width: 603px;
+    padding: 20px;
+    text-indent: 6px;
+    font-size: xx-large;
+    text-anchor: middle;
+    border-radius: 64px;
+    color: var(--text-color);
+    margin: 10px 0px 10px 0px;
+    background-color: #2f5597;
+}
+
+.contact-container:hover > .contact-icon {
+    border-bottom: 5px dotted #345ea5;
+}
+
+.contact-container:hover > .contact-pill {
+    background-color: #345ea5;
+}
+
 /* Static */
 .project-version-container {
-    right: 0;
     bottom: 0;
+    right: 10px;
     display: flex;
     position: fixed;
 }
 
 /* General */
 .noline {
-    background-color: transparent;
     color: transparent;
+    background-color: transparent;
 }
 
 /* https://stackoverflow.com/a/4407335 */
@@ -190,9 +243,4 @@ section {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
-}
-
-.centered {
-    display: flex;
-    justify-content: center;
 }
