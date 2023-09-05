@@ -6,11 +6,11 @@ function sendEmail(){
     window.location.href = link;
 }
 
-function SetupNavigationBar(){
+function SetupNavigationBar() {
 
     const links = document.querySelectorAll('.nav-link');
 
-    if (links.length){
+    if (links.length) {
         links.forEach((link) => 
         {
             link.addEventListener('click', (e) => {
@@ -22,19 +22,43 @@ function SetupNavigationBar(){
                 }
             });
 
-            if (link.href === location.href){
+            if (link.href === location.href) {
                 link.classList.add('active');
             }
-            else{
+            else {
                 link.classList.remove('active');
             }
         });
     }
 }
 
-window.addEventListener('DOMContentLoaded', function(evt){
+function SetupExperienceButtons() {
+    const buttons = document.querySelectorAll('.experience-toggle');
+
+    if (buttons.length) {
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                let children = btn.parentNode.children;
+
+                for (var i = 0; i < children.length; ++i) {
+                    let child = children.item(i);
+
+                    if (child == btn)
+                        continue;
+
+                    child.classList.toggle('active');
+                }
+                
+                btn.classList.toggle('active');
+            });
+        })
+    }
+}
+
+window.addEventListener('DOMContentLoaded', function(evt) {
     
     SetupNavigationBar();
+    SetupExperienceButtons();
     
     const contact_button = document.getElementById('contact-button');
     contact_button.onclick = sendEmail;
