@@ -36,9 +36,6 @@ window.addEventListener('DOMContentLoaded', function(evt) {
     
     SetupNavigationBar();
     
-    const contact_button = document.getElementById('contact-button');
-    contact_button.onclick = sendEmail;
-    
     const project_version = document.getElementById('project-version');
     project_version.textContent = PROJECT_VERSION;
 });
