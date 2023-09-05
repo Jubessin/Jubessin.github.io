@@ -1,20 +1,18 @@
-:root
-{
-    --background-color: #1b222b;
+:root {
+    scroll-behavior: smooth;
     --text-color: #ebeceb;
+    --background-color: #1b222b;
     --text-color-important: white;
 }
 
-body
-{
+body {
     background-color: var(--background-color);
 	font-family: Calibri, sans-serif;
     color: var(--text-color);
     margin: auto;
 }
 
-nav
-{
+nav {
     height: 100%;
     display: flex;
     position: fixed;
@@ -22,48 +20,35 @@ nav
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3, h4
-{
-    margin: 20px 20px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-p
-{
+p {
     line-height: 1.2em;
 }
 
-section
-{
+section {
     margin-left: 490px;
     margin-right: 30px;
 }
 
-.nav-bar
-{
+/* Navigation Bar */
+.nav-bar {
     margin-left: 28px;
     margin-bottom: 10px;
 }
 
-.nav-list
-{
+.nav-list {
     list-style-type:none;
     vertical-align: middle;
 }
 
-.nav-list:hover > li
-{
+.nav-list:hover > li {
     opacity: 0.75;
 }
 
-.nav-list > li:hover
-{
+.nav-list > li:hover {
     opacity: 1;
 }
 
-.nav-link
-{
+.nav-link {
     float: left;
     font-size: 48px;
     margin-bottom: 49px;
@@ -72,20 +57,132 @@ section
     color: var(--text-color-important);
 }
 
-.nav-link.active
-{
+.nav-link.active {
     font-weight: bold;
 }
 
-.centered
-{
+/* About */
+.about-section {
+    padding-top: 55px;
+    margin-left: 840px;
+}
+
+.about-section > p {
+    width: 650px;
+    font-size: 2.2em;
+    padding-bottom: 30px;
+}
+
+/* Experience */
+.experience-section {
+    margin-left: 820px;
+}
+
+.experience-body {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 20px 20px 5px 20px;
+}
+
+.experience-header {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: 2.7em;
+    font-weight: normal;
+}
+
+.experience-date {
+    float: left;
+    left:0;
+    padding: 20px;
+    margin-top: 12px;
+    font-size: 1.75em;
+    margin-left: 400px;
+    position: absolute;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.experience-skill-container {
+    padding-top: 30px;
+}
+
+.experience-skill {
+    font-size: large;
+    font-weight: bold;
+    margin-right: 20px;
+    border-radius: 16px;
+    padding: 5px 25px 5px 25px;
+    background-color: #203864;
+    border: 0px solid transparent;
+    color: var(--text-color-important);
+}
+
+.experience-report {
+    right: 0;
+    border-radius: 12px;
+    position: absolute;
+    text-decoration: none;
+    margin: 30px 55px 0px 0px;
+    border: 2px solid #b4c7e7;
+    background-color: transparent
+}
+
+.experience-report:hover {
+    cursor: pointer;
+    background-color: #b4c7e7b7;
+    border: 2px solid transparent;
+}
+
+.experience-body:hover,
+.experience-report:hover ~ .experience-body {
+    cursor: pointer;
+    border-radius: 16px;
+    background-color: #1f354b4f;
+}
+
+.experience-report::before {
+    width: 50px;
+    height: 35px;
+    content: "WTR";
+    display:flex;
+    color:white;
+    font-size: 20px;
+    font-weight:bold;
+    flex-direction:row;
+    align-items:center;
+    font-family:courier;
+    justify-content:center;
+}
+
+.experience-section > div {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+
+.experience-body > p {
+    font-size: 2.1em;
+    margin: 20px 20px 20px 0px;
+}
+
+/* Static */
+.project-version-container {
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+}
+
+/* General */
+.noline {
+    background-color: transparent;
+    color: transparent;
 }
 
 /* https://stackoverflow.com/a/4407335 */
-.noselect
-{
+.noselect {
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -95,51 +192,7 @@ section
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.project-version-container
-{
-    right: 0;
-    bottom: 0;
+.centered {
     display: flex;
-    position: fixed;
-}
-
-.icon-container
-{
-    margin: 10px;
-}
-
-.icon-container:hover
-{
-    margin-bottom: 15px;
-}
-
-.icon-button
-{
-    padding: 0;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 16px;
-}
-
-.icon-button > img
-{
-    width: 25px;
-    height: 25px;
-    padding: 4px;
-    margin: 0;
-    display: flex;
-    cursor: pointer;
-}
-
-.about-section
-{
-    padding-top: 55px;
-    margin-left: 840px;
-}
-
-.about-section > p
-{
-    width: 650px;
-    font-size: 2.2em;
-    padding-bottom: 30px;
+    justify-content: center;
 }
