@@ -120,30 +120,30 @@ section {
     color: var(--text-color-important);
 }
 
-.experience-toggle {
+.experience-report {
     right: 0;
     border-radius: 12px;
     position: absolute;
     text-decoration: none;
-    margin: 25px 50px 0px 0px;
+    margin: 30px 55px 0px 0px;
     border: 2px solid #b4c7e7;
     background-color: transparent
 }
 
-.experience-toggle:hover {
+.experience-report:hover {
     cursor: pointer;
     background-color: #b4c7e7b7;
     border: 2px solid transparent;
 }
 
 .experience-body:hover,
-.experience-toggle:hover ~ .experience-body {
+.experience-report:hover ~ .experience-body {
     cursor: pointer;
     border-radius: 16px;
     background-color: #1f354b4f;
 }
 
-.experience-toggle::before {
+.experience-report::before {
     width: 50px;
     height: 35px;
     content: "WTR";
