@@ -32,33 +32,9 @@ function SetupNavigationBar() {
     }
 }
 
-function SetupExperienceButtons() {
-    const buttons = document.querySelectorAll('.experience-toggle');
-
-    if (buttons.length) {
-        buttons.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                let children = btn.parentNode.children;
-
-                for (var i = 0; i < children.length; ++i) {
-                    let child = children.item(i);
-
-                    if (child == btn)
-                        continue;
-
-                    child.classList.toggle('active');
-                }
-                
-                btn.classList.toggle('active');
-            });
-        })
-    }
-}
-
 window.addEventListener('DOMContentLoaded', function(evt) {
     
     SetupNavigationBar();
-    SetupExperienceButtons();
     
     const contact_button = document.getElementById('contact-button');
     contact_button.onclick = sendEmail;

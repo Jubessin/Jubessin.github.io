@@ -1,6 +1,7 @@
 :root {
-    --background-color: #1b222b;
+    scroll-behavior: smooth;
     --text-color: #ebeceb;
+    --background-color: #1b222b;
     --text-color-important: white;
 }
 
@@ -77,33 +78,11 @@ section {
     margin-left: 820px;
 }
 
-.experience-section > div {
-    display: flex;
-    flex-direction: column;
-}
-
 .experience-body {
-    display: none;
+    display: block;
     text-decoration: none;
     color: var(--text-color);
     padding: 20px 20px 5px 20px;
-}
-
-.experience-body.active {
-    display: block;
-}
-
-.experience-details {
-    display: none;
-    height: 600px;
-    overflow-y: auto;
-    border-radius: 16px;
-    background-color: #203864;
-    border: 0px solid transparent;
-}
-
-.experience-details.active {
-    display: block;
 }
 
 .experience-header {
@@ -143,15 +122,12 @@ section {
 
 .experience-toggle {
     right: 0;
-    border-radius: 50%;
+    border-radius: 12px;
     position: absolute;
-    margin: 25px 75px 0px 0px;
+    text-decoration: none;
+    margin: 25px 50px 0px 0px;
     border: 2px solid #b4c7e7;
     background-color: transparent
-}
-
-.experience-toggle.active {
-    background-color: #b4c7e7;
 }
 
 .experience-toggle:hover {
@@ -167,17 +143,13 @@ section {
     background-color: #1f354b4f;
 }
 
-.experience-body > p {
-    font-size: 2.1em;
-}
-
 .experience-toggle::before {
-    width: 40px;
-    height: 40px;
-    content: "+";
+    width: 50px;
+    height: 35px;
+    content: "WTR";
     display:flex;
     color:white;
-    font-size: 50px;
+    font-size: 20px;
     font-weight:bold;
     flex-direction:row;
     align-items:center;
@@ -185,8 +157,14 @@ section {
     justify-content:center;
 }
 
-.experience-toggle.active::before {
-    content: '-';
+.experience-section > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-body > p {
+    font-size: 2.1em;
+    margin: 20px 20px 20px 0px;
 }
 
 /* Static */
