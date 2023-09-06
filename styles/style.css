@@ -136,11 +136,12 @@ section {
 
 /* Experience */
 .experience-section {
-    margin-left: 820px;
+    margin-left: 420px;
 }
 
 .experience-body {
     display: block;
+    margin-left: 400px;
     text-decoration: none;
     color: var(--text-color);
     padding: 20px 20px 5px 20px;
@@ -156,11 +157,9 @@ section {
 
 .experience-date {
     float: left;
-    left:0;
     padding: 20px;
     margin-top: 12px;
     font-size: 1.75em;
-    margin-left: 400px;
     position: absolute;
     font-style: italic;
     font-weight: normal;
@@ -344,3 +343,22 @@ section {
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
 }
+
+.fade-in-up-on-scroll {
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-in-up {
+    animation: 0.75s both fadeInUp;
+} 
