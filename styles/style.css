@@ -344,8 +344,13 @@ section {
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.fade-in-up-on-scroll {
+/* Animations */
+.scroll-fade-in-up {
     opacity: 0;
+}
+
+.scroll-fade-in-up-active {
+    animation: 0.75s both fadeInUp;
 }
 
 @keyframes fadeInUp {
@@ -358,7 +363,3 @@ section {
         opacity: 1;
     }
 }
-
-.fade-in-up {
-    animation: 0.75s both fadeInUp;
-} 
