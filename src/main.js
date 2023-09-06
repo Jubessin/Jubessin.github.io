@@ -1,10 +1,7 @@
 import { PROJECT_VERSION } from "./constants.js";
 
-function sendEmail(){
-    
-    var link = "mailto:justinerogun@hotmail.com";
-    window.location.href = link;
-}
+import { SetTheme } from "./theme.js";
+import { ToggleTheme } from "./theme.js";
 
 function SetupNavigationBar() {
 
@@ -32,10 +29,22 @@ function SetupNavigationBar() {
     }
 }
 
+function SetupThemeToggle() {
+
+    const btn = document.getElementById('theme-btn');
+
+    btn.addEventListener('click', function(e) {
+        ToggleTheme();
+    });
+}
+
 window.addEventListener('DOMContentLoaded', function(evt) {
-    
+
+    SetupThemeToggle();
     SetupNavigationBar();
-    
+
+    SetTheme(window.localStorage.getItem('theme'));
+
     const project_version = document.getElementById('project-version');
     project_version.textContent = PROJECT_VERSION;
 });
