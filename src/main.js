@@ -1,49 +1,58 @@
 import { PROJECT_VERSION } from "./constants.js";
 
-import { SetTheme } from "./theme.js";
-import { ToggleTheme } from "./theme.js";
+import { setTheme, toggleTheme } from "./theme.js";
 
-function SetupNavigationBar() {
+import { observeIntersections } from "./observer.js";
 
-    const links = document.querySelectorAll('.nav-link');
+function onScroll(element, isIntersecting) {
 
-    if (links.length) {
-        links.forEach((link) => 
-        {
-            link.addEventListener('click', (e) => {
-                if (!link.classList.contains('active')){
-                    links.forEach((link) => {
-                        link.classList.remove('active');
-                    });
-                    link.classList.add('active');
-                }
-            });
-
-            if (link.href === location.href) {
-                link.classList.add('active');
-            }
-            else {
-                link.classList.remove('active');
-            }
-        });
+    if (isIntersecting) {
+        if (window.scrollY >= ((element.offsetTop + (element.scrollHeight)) - window.innerHeight)) {
+            element.classList.add('scroll-fade-in-up-active');
+        }
+    }
+    else if (window.scrollY < (element.offsetTop - window.innerHeight)) {
+        element.classList.remove('scroll-fade-in-up-active');
     }
 }
 
-function SetupThemeToggle() {
+function setupNavigationBar() {
 
-    const btn = document.getElementById('theme-btn');
+    const links = document.querySelectorAll('.nav-link');
 
-    btn.addEventListener('click', function(e) {
-        ToggleTheme();
+    links.forEach((link) => {
+        link.addEventListener('click', (_) => {
+            if (link.classList.contains('active')) 
+                return;
+
+            links.forEach((link) => {
+                link.classList.remove('active');
+            });
+            link.classList.add('active');
+        });
+
+        link.classList.toggle('active', link.href === location.href);
     });
 }
 
-window.addEventListener('DOMContentLoaded', function(evt) {
+function setupThemeToggle() {
+    
+    document.getElementById('theme-btn')
+            .addEventListener('click', toggleTheme);
+}
 
-    SetupThemeToggle();
-    SetupNavigationBar();
+window.addEventListener('DOMContentLoaded', function(_) {
 
-    SetTheme(window.localStorage.getItem('theme'));
+    setupThemeToggle();
+    setupNavigationBar();
+    
+    setTheme(window.localStorage.getItem('theme'));
+
+    observeIntersections(
+        document.querySelectorAll('.scroll-fade-in-up'), 
+        { threshold: [0, 1] }, 
+        (entry) => { onScroll(entry.target, entry.isIntersecting); }, 
+        (element) => { onScroll(element, true); });
 
     const project_version = document.getElementById('project-version');
     project_version.textContent = PROJECT_VERSION;
