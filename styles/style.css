@@ -243,13 +243,22 @@ section {
     text-decoration: none;
 }
 
-.contact-icon {
+.contact-icon-dark,
+.contact-icon-light {
+    opacity: 0;
     width: 40px;
     height: 40px;
+    display: none;
     padding-left: 2px;
     padding-top: 30px;
     margin-right: 60px;
     padding-bottom: 15px;
+}
+
+.contact-icon-dark.active,
+.contact-icon-light.active {
+    opacity: 1;
+    display: flex;
 }
 
 .contact-pill {
@@ -264,7 +273,8 @@ section {
     background-color: var(--pill-color);
 }
 
-.contact-container:hover > .contact-icon {
+.contact-container:hover > .contact-icon-dark,
+.contact-container:hover > .contact-icon-light {
     border-bottom: 5px dotted var(--pill-color-hovered);
 }
 
