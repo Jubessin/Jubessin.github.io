@@ -1,8 +1,61 @@
 :root {
     scroll-behavior: smooth;
+}
+
+html {
+    --background: #1b222b;
+}
+
+html[theme='light'] {
+    --text-color: rgb(25, 29, 59);
+    --background: rgb(222, 222, 222);
+    
+    --text-color-light: rgb(230, 238, 255);
+    --text-color-important: rgb(1, 7, 44);
+    
+    --pill-color: #738ce6;
+    --pill-color-hovered: #657cd1;
+    
+    --report-link-color: #596cb1;
+    --report-link-color-hovered: #5566a7;
+    
+    --experience-color-hovered: #8fb9e4;
+
+    --theme-btn-light: #fff;
+    --theme-btn-dark: #000;
+}
+
+html[theme='dark'] {
     --text-color: #ebeceb;
-    --background-color: #1b222b;
+    --background: #1b222b;
+    
+    --text-color-light: #f8f8f8;
     --text-color-important: white;
+
+    --pill-color: #2f5597;
+    --pill-color-hovered: #345ea5;
+    
+    --report-link-color: #b4c7e7;
+    --report-link-color-hovered: #b4c7e7b7;
+    
+    --experience-color-hovered: #1f354b4f;
+    
+    --theme-btn-light: #000;
+    --theme-btn-dark: #fff;
+}
+
+/* https://mwichary.medium.com/dark-theme-in-a-day-3518dde2955a */
+html.color-theme-in-transition,
+html.color-theme-in-transition *,
+html.color-theme-in-transition *:before,
+html.color-theme-in-transition *:after {
+    transition-delay: 0 !important;
+    transition: color 750ms linear !important;
+    -moz-transition: color 750ms linear !important;
+    -webkit-transition: color 750ms  linear !important;
+    transition: background-color 750ms linear !important;
+    -moz-transition: background-color 750ms linear !important;
+    -webkit-transition: background-color 750ms linear !important;
 }
 
 html, body, main {
@@ -16,7 +69,7 @@ body {
     margin: auto;
     color: var(--text-color);
 	font-family: Calibri, sans-serif;
-    background-color: var(--background-color);
+    background-color: var(--background);
 }
 
 nav {
@@ -123,9 +176,9 @@ section {
     margin-right: 20px;
     border-radius: 16px;
     padding: 5px 25px 5px 25px;
-    background-color: #203864;
     border: 0px solid transparent;
-    color: var(--text-color-important);
+    color: var(--text-color-light);
+    background-color: var(--pill-color);
 }
 
 .experience-report {
@@ -134,21 +187,21 @@ section {
     border-radius: 12px;
     text-decoration: none;
     margin: 30px 55px 0px 0px;
-    border: 2px solid #b4c7e7;
-    background-color: transparent
+    background-color: transparent;
+    border: 2px solid var(--pill-color);
 }
 
 .experience-report:hover {
     cursor: pointer;
-    background-color: #b4c7e7b7;
     border: 2px solid transparent;
+    background-color: var(--pill-color-hovered);
 }
 
 .experience-body:hover,
 .experience-report:hover ~ .experience-body {
     cursor: pointer;
     border-radius: 16px;
-    background-color: #1f354b4f;
+    background-color: var(--experience-color-hovered);
 }
 
 .experience-report::before {
@@ -156,13 +209,13 @@ section {
     height: 35px;
     content: "WTR";
     display:flex;
-    color:white;
     font-size: 20px;
     font-weight:bold;
     flex-direction:row;
     align-items:center;
     font-family:courier;
     justify-content:center;
+    color:var(--text-color-important);
 }
 
 .experience-section > div {
@@ -207,17 +260,64 @@ section {
     font-size: xx-large;
     text-anchor: middle;
     border-radius: 64px;
-    color: var(--text-color);
     margin: 10px 0px 10px 0px;
-    background-color: #2f5597;
+    color: var(--text-color-light);
+    background-color: var(--pill-color);
 }
 
 .contact-container:hover > .contact-icon {
-    border-bottom: 5px dotted #345ea5;
+    border-bottom: 5px dotted var(--pill-color-hovered);
 }
 
 .contact-container:hover > .contact-pill {
-    background-color: #345ea5;
+    background-color: var(--pill-color-hovered);
+}
+
+/* Theme Button */
+.theme-btn {
+    left: 60px;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    display: flex;
+    cursor: pointer;
+    position: fixed;
+    border: 0px solid transparent;
+    background-color: transparent;
+}
+
+.theme-crescent-container {
+    left: 60px;
+    bottom: 20px;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    transition: bottom 0.3s;
+}
+
+.theme-crescent-light {
+    width: 50px;
+    height: 50px;
+    border: 0px solid transparent;
+    border-radius: 150px 150px 150px 150px;
+    background-color: var(--theme-btn-light);
+}
+
+.theme-crescent-dark {
+    left: 25px;
+    width: 24px;
+    height: 48px;
+    margin-top: 1px;
+    position: absolute;
+    border: 0px solid transparent;
+    border-radius: 0px 150px 150px 0px;
+    background-color: var(--theme-btn-dark);
+}
+
+.theme-btn:hover > .theme-crescent-container {
+    bottom: 25px;
+    transition: bottom 0.3s;
+    transition-delay: 0 !important;
 }
 
 /* Static */
