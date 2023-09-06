@@ -1,12 +1,12 @@
 import { DEFAULT_THEME } from "./constants.js";
 
-export function ToggleTheme() {
-    SetTheme(window.localStorage.getItem('theme')=== 'light' 
+export function toggleTheme() {
+    setTheme(window.localStorage.getItem('theme')=== 'light' 
         ? 'dark'
         : 'light');
 }
 
-export function SetTheme(theme) {
+export function setTheme(theme) {
     if (theme === null) {
         theme = DEFAULT_THEME;
     }

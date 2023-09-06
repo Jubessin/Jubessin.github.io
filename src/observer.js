@@ -1,4 +1,4 @@
-export function Observe(elements, options, callback, elementCallback) {
+export function observeIntersections(elements, options, callback, elementInitializationCallback) {
 
     let observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -7,7 +7,7 @@ export function Observe(elements, options, callback, elementCallback) {
     }, options);
 
     elements.forEach((element) => {
-        elementCallback(element);
         observer.observe(element);
+        elementInitializationCallback(element);
     })
 }

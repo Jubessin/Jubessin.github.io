@@ -1,11 +1,10 @@
 import { PROJECT_VERSION } from "./constants.js";
 
-import { SetTheme } from "./theme.js";
-import { ToggleTheme } from "./theme.js";
+import { setTheme, toggleTheme } from "./theme.js";
 
-import { Observe } from "./observer.js";
+import { observeIntersections } from "./observer.js";
 
-function OnScroll(element, isIntersecting) {
+function onScroll(element, isIntersecting) {
 
     if (isIntersecting) {
         if (window.scrollY >= ((element.offsetTop + (element.scrollHeight)) - window.innerHeight)) {
@@ -17,7 +16,7 @@ function OnScroll(element, isIntersecting) {
     }
 }
 
-function SetupNavigationBar() {
+function setupNavigationBar() {
 
     const links = document.querySelectorAll('.nav-link');
 
@@ -36,24 +35,24 @@ function SetupNavigationBar() {
     });
 }
 
-function SetupThemeToggle() {
-
+function setupThemeToggle() {
+    
     document.getElementById('theme-btn')
-            .addEventListener('click', ToggleTheme);
+            .addEventListener('click', toggleTheme);
 }
 
 window.addEventListener('DOMContentLoaded', function(_) {
 
-    SetupThemeToggle();
-    SetupNavigationBar();
+    setupThemeToggle();
+    setupNavigationBar();
     
-    SetTheme(window.localStorage.getItem('theme'));
+    setTheme(window.localStorage.getItem('theme'));
 
-    Observe(
+    observeIntersections(
         document.querySelectorAll('.scroll-fade-in-up'), 
         { threshold: [0, 1] }, 
-        (entry) => { OnScroll(entry.target, entry.isIntersecting); }, 
-        (element) => { OnScroll(element, true); });
+        (entry) => { onScroll(entry.target, entry.isIntersecting); }, 
+        (element) => { onScroll(element, true); });
 
     const project_version = document.getElementById('project-version');
     project_version.textContent = PROJECT_VERSION;
