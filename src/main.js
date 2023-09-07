@@ -4,6 +4,8 @@ import { setTheme, toggleTheme } from "./theme.js";
 
 import { observeIntersections } from "./observer.js";
 
+import { startPhotoLoading } from "./photo-loader.js";
+
 function onScroll(element, isIntersecting) {
 
     if (isIntersecting) {
@@ -53,6 +55,8 @@ window.addEventListener('DOMContentLoaded', function(_) {
         { threshold: [0, 1] }, 
         (entry) => { onScroll(entry.target, entry.isIntersecting); }, 
         (element) => { onScroll(element, true); });
+
+    startPhotoLoading();
 
     const project_version = document.getElementById('project-version');
     project_version.textContent = PROJECT_VERSION;
