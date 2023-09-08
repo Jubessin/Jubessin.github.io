@@ -1,4 +1,3 @@
-import 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js'
 import './constants.js'
 import './theme.js'
 import './observer.js'

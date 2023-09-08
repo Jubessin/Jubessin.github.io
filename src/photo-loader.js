@@ -24,10 +24,13 @@ function fadeToPhoto(child, delay) {
 
     let photo = PHOTOS[ctx.index];
 
-    $(child).fadeTo(1000, 0.05, function() {
-        $(child).attr("src", ('src/images/' + photo));
-    }).fadeTo(1000, 1);
+    child.style.opacity = 0.05;
 
+    setTimeout(() => {
+        child.src = ('src/images/' + photo);
+        child.style.opacity = 1;
+    }, 1000);
+    
     ctx.tid = setTimeout(() => fadeToPhoto(child, delay), delay);
 };
 

@@ -152,6 +152,7 @@ section {
     display: flex;
     object-fit: cover;
     border-radius: 2px;
+    transition: opacity 1s linear;
 }
 
 /* About */
