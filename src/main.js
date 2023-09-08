@@ -4,17 +4,17 @@ import { setTheme, toggleTheme } from "./theme.js";
 
 import { observeIntersections } from "./observer.js";
 
-import { startPhotoLoading } from "./photo-loader.js";
+import { startPhotoLoading, stopPhotoLoading } from "./photo-loader.js";
 
-function onScroll(element, isIntersecting) {
+function handleScroll(element, isIntersecting, onVisibleCallback, onInvisibleCallback) {
 
     if (isIntersecting) {
-        if (window.scrollY >= ((element.offsetTop + (element.scrollHeight)) - window.innerHeight)) {
-            element.classList.add('scroll-fade-in-up-active');
+        if (onVisibleCallback && window.scrollY >= ((element.offsetTop + (element.scrollHeight)) - window.innerHeight)) {
+            onVisibleCallback();
         }
     }
-    else if (window.scrollY < (element.offsetTop - window.innerHeight)) {
-        element.classList.remove('scroll-fade-in-up-active');
+    else if (onInvisibleCallback && window.scrollY < (element.offsetTop - window.innerHeight)) {
+        onInvisibleCallback();
     }
 }
 
@@ -53,8 +53,50 @@ window.addEventListener('DOMContentLoaded', function(_) {
     observeIntersections(
         document.querySelectorAll('.scroll-fade-in-up'), 
         { threshold: [0, 1] }, 
-        (entry) => { onScroll(entry.target, entry.isIntersecting); }, 
-        (element) => { onScroll(element, true); });
+        (entry) => { 
+            let element = entry.target;
+
+            handleScroll(
+                element, 
+                entry.isIntersecting, 
+                () => element.classList.add('scroll-fade-in-up-active'), 
+                () => element.classList.remove('scroll-fade-in-up-active')); 
+        }, 
+        (element) => { 
+            handleScroll(
+                element, 
+                true, 
+                () => element.classList.add('scroll-fade-in-up-active'), 
+                () => element.classList.remove('scroll-fade-in-up-active')); 
+        });
+
+    const nav = this.document.querySelector('.nav-bar');
+    const themeToggle = this.document.querySelector('.theme-btn')
+
+    observeIntersections(
+        this.document.querySelectorAll('.landing-image-container'),
+        {
+            threshold: [0.1, 0.25],
+            rootMargin: '50px'
+        },
+        (entry) => { 
+
+            let element = entry.target;
+
+            if (entry.isIntersecting) {
+                if (window.scrollY >= ((element.offsetHeight) - window.innerHeight)) {
+                    startPhotoLoading();
+                    nav.classList.remove('visible');
+                    themeToggle.classList.remove('visible');
+                }
+            }
+            else  {
+                stopPhotoLoading();
+                nav.classList.add('visible');
+                themeToggle.classList.add('visible');
+            }
+        },
+    );
 
     startPhotoLoading();
 

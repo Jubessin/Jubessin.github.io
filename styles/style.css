@@ -92,8 +92,16 @@ section {
 
 /* Navigation Bar */
 .nav-bar {
+    opacity: 0;
     margin-left: 28px;
+    visibility: hidden;
     margin-bottom: 10px;
+    transition: opacity 500ms linear, visibility 500ms linear;
+}
+
+.nav-bar.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-list {
@@ -308,6 +316,7 @@ section {
 
 /* Theme Button */
 .theme-btn {
+    opacity: 0;
     left: 60px;
     width: 50px;
     height: 50px;
@@ -315,8 +324,15 @@ section {
     display: flex;
     cursor: pointer;
     position: fixed;
+    visibility: hidden;
     border: 0px solid transparent;
     background-color: transparent;
+    transition: opacity 500ms linear, visibility 500ms linear;
+}
+
+.theme-btn.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .theme-crescent-container {
@@ -381,6 +397,7 @@ section {
 /* Animations */
 .scroll-fade-in-up {
     opacity: 0;
+    visibility: hidden;
 }
 
 .scroll-fade-in-up-active {
@@ -390,10 +407,12 @@ section {
 @keyframes fadeInUp {
     from {
         transform: translateY(50px);
+        visibility: hidden;
         opacity: 0;
     }
     to {
         transform: translateY(0);
+        visibility: visible;
         opacity: 1;
     }
 }
