@@ -1,4 +1,5 @@
 import './constants.js'
 import './theme.js'
 import './observer.js'
+import './photo-loader.js'
 import './main.js'

@@ -8,6 +8,9 @@ export function observeIntersections(elements, options, callback, elementInitial
 
     elements.forEach((element) => {
         observer.observe(element);
-        elementInitializationCallback(element);
+
+        if (elementInitializationCallback) {
+            elementInitializationCallback(element);
+        }
     })
 }
