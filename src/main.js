@@ -6,6 +6,9 @@ import { observeIntersections } from "./observer.js";
 
 import { startPhotoLoading, stopPhotoLoading } from "./photo-loader.js";
 
+const nav = document.querySelector('.nav-bar');
+const themeToggle = document.querySelector('.theme-btn')
+
 function handleScroll(element, isIntersecting, onVisibleCallback, onInvisibleCallback) {
 
     if (isIntersecting) {
@@ -70,9 +73,6 @@ window.addEventListener('DOMContentLoaded', function(_) {
                 () => element.classList.remove('scroll-fade-in-up-active')); 
         });
 
-    const nav = this.document.querySelector('.nav-bar');
-    const themeToggle = this.document.querySelector('.theme-btn')
-
     observeIntersections(
         this.document.querySelectorAll('.landing-image-container'),
         {
@@ -98,8 +98,28 @@ window.addEventListener('DOMContentLoaded', function(_) {
         },
     );
 
+    observeIntersections(
+        this.document.getElementsByTagName('section'),
+        {
+            threshold: [0.6],
+        },
+        (entry) => {
+            let element = entry.target;
+
+            if (!element.id || !entry.isIntersecting)
+                return;
+
+            const links = document.querySelectorAll('.nav-link');
+            
+            links.forEach((link) => {
+                link.classList.toggle('active', link.href.endsWith(element.id));
+            });
+        }
+    );
+
     startPhotoLoading();
 
     const project_version = document.getElementById('project-version');
     project_version.textContent = PROJECT_VERSION;
 });
+

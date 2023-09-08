@@ -6,11 +6,12 @@ export function observeIntersections(elements, options, callback, elementInitial
         });
     }, options);
 
-    elements.forEach((element) => {
+    for (var i = 0; i < elements.length; ++i) {
+        let element = elements[i];
         observer.observe(element);
 
         if (elementInitializationCallback) {
             elementInitializationCallback(element);
         }
-    })
+    }
 }
