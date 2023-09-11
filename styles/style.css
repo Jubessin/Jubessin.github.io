@@ -158,18 +158,18 @@ section {
 /* About */
 .about-section {
     padding-top: 55px;
-    margin-left: 840px;
+    margin-right: 30px;
 }
 
 .about-section > p {
-    width: 650px;
     font-size: 2.2em;
     padding-bottom: 30px;
 }
 
 /* Experience */
 .experience-section {
-    margin-left: 420px;
+    margin-right: 30px;
+    padding-bottom: 30px;
 }
 
 .experience-body {
@@ -260,18 +260,56 @@ section {
     margin: 20px 20px 20px 0px;
 }
 
+/* Projects */
+.project-section {
+    margin-right: 30px;
+    padding-bottom: 30px;
+}
+
+.project-container {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 20px 20px 5px 20px;
+}
+
+.project-header {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: 2.7em;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.project-body {
+    display: flex;
+    padding-right: 30px;
+    flex-direction: row;
+}
+
+.project-details {
+    font-size: 1.75em;
+}
+
+.project-image {
+    max-width: 100%;
+    align-self: center;
+    padding: 0px 50px 0px 50px;
+}
+
 /* Contact */
 .contact-section {
-    margin: 0;
     display: flex;
-    margin-left: 680px;
+    width: max-content;
+    align-self: center;
     flex-direction: column;
     justify-content: center;
 }
 
 .contact-container {
     display: flex;
-    width: fit-content;
+    margin-right: 20px;
     flex-direction: row;
     text-decoration: none;
 }
@@ -295,9 +333,10 @@ section {
 }
 
 .contact-pill {
-    width: 603px;
+    flex-grow: 1;
     padding: 20px;
     text-indent: 6px;
+    max-width: 500px;
     font-size: xx-large;
     text-anchor: middle;
     border-radius: 64px;
