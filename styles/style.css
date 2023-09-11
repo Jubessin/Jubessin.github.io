@@ -190,19 +190,22 @@ section {
 
 .experience-date {
     float: left;
-    padding: 20px;
     margin-top: 12px;
     font-size: 1.75em;
     position: absolute;
     font-style: italic;
     font-weight: normal;
+    padding: 20px 20px 20px 0px;
 }
 
 .experience-skill-container {
-    padding-top: 30px;
+    display: flex;
+    flex-flow: wrap;
+    -ms-flex-flow: wrap;
 }
 
 .experience-skill {
+    margin-top: 25px;
     font-size: large;
     font-weight: bold;
     margin-right: 20px;
@@ -268,34 +271,37 @@ section {
 
 .project-container {
     display: block;
+    padding-bottom: 20px;
     text-decoration: none;
     color: var(--text-color);
-    padding: 20px 20px 5px 20px;
 }
 
 .project-header {
-    margin: 0;
-    padding: 0;
-    display: inline;
     font-size: 2.7em;
     font-weight: normal;
+    margin-bottom: 15px;
+    display: inline-flex;
     text-decoration: none;
+    color: var(--text-color-important);
 }
 
 .project-body {
     display: flex;
-    padding-right: 30px;
+    margin-left: -30px;
     flex-direction: row;
+    padding: 0px 30px 0px 0px;
 }
 
 .project-details {
+    width: 100%;
     font-size: 1.75em;
+    padding: 0px 30px 0px 30px;
 }
 
 .project-image {
-    max-width: 100%;
+    width: 100%;
     align-self: center;
-    padding: 0px 50px 0px 50px;
+    padding: 0px 30px 0px 30px;
 }
 
 /* Contact */
