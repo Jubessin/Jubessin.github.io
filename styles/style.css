@@ -271,6 +271,7 @@ section {
 
 .project-container {
     display: block;
+    width: min-content;
     padding-bottom: 20px;
     text-decoration: none;
     color: var(--text-color);
@@ -282,24 +283,27 @@ section {
     margin-bottom: 15px;
     display: inline-flex;
     text-decoration: none;
+    min-width: max-content;
     color: var(--text-color-important);
 }
 
 .project-body {
     display: flex;
+    width: min-content;
     margin-left: -30px;
     flex-direction: row;
-    padding: 0px 30px 0px 0px;
 }
 
 .project-details {
     width: 100%;
+    min-width: 100%;
     font-size: 1.75em;
     padding: 0px 30px 0px 30px;
 }
 
 .project-image {
     width: 100%;
+    min-width: 100%;
     align-self: center;
     padding: 0px 30px 0px 30px;
 }
