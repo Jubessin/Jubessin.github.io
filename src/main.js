@@ -11,6 +11,12 @@ const themeToggle = document.querySelector('.theme-btn');
 const sections = document.getElementsByTagName('section');
 const scrollInFadeUps = document.querySelectorAll('.scroll-fade-in-up');
 
+function setupThemeToggle() {
+    
+    document.getElementById('theme-btn')
+            .addEventListener('click', toggleTheme);
+}
+
 function setupNavigationBar() {
 
     const links = document.querySelectorAll('.nav-link');
@@ -30,10 +36,30 @@ function setupNavigationBar() {
     });
 }
 
-function setupThemeToggle() {
-    
-    document.getElementById('theme-btn')
-            .addEventListener('click', toggleTheme);
+function handleWindowScroll() {
+
+    let mostVisible = getMostVisible(sections);
+
+    if (mostVisible && mostVisible.id) {
+        const links = document.querySelectorAll('.nav-link');
+        
+        links.forEach((link) => {
+            link.classList.toggle('active', link.href.endsWith(mostVisible.id));
+        });
+    }
+
+    scrollInFadeUps.forEach((element) => {
+        let visiblePercent = getVisibleHeightPercent(element, window.innerHeight);
+
+        if (visiblePercent >= 0.5 || 
+            (window.scrollY >= (element.offsetTop + element.scrollHeight - window.innerHeight))) {
+            element.classList.add('scroll-fade-in-up-active');
+        }
+        else if (visiblePercent == 0 && 
+                 window.scrollY < (element.offsetTop - window.innerHeight)) {
+            element.classList.remove('scroll-fade-in-up-active');
+        }
+    })
 }
 
 // https://stackoverflow.com/a/39576399
@@ -147,30 +173,10 @@ window.addEventListener('DOMContentLoaded', function(_) {
 
     startPhotoLoading();
 
+    handleWindowScroll();
+
     const project_version = document.getElementById('project-version');
     project_version.textContent = PROJECT_VERSION;
 });
 
-window.addEventListener('scroll', function(_) {
-
-    let mostVisible = getMostVisible(sections);
-
-    if (mostVisible && mostVisible.id) {
-        const links = document.querySelectorAll('.nav-link');
-        
-        links.forEach((link) => {
-            link.classList.toggle('active', link.href.endsWith(mostVisible.id));
-        });
-    }
-
-    scrollInFadeUps.forEach((element) => {
-        let visiblePercent = getVisibleHeightPercent(element, window.innerHeight);
-
-        if (visiblePercent >= 0.5) {
-            element.classList.add('scroll-fade-in-up-active');
-        }
-        else if (visiblePercent == 0 && window.scrollY < (element.offsetTop - window.innerHeight)) {
-            element.classList.remove('scroll-fade-in-up-active');
-        }
-    })
-});
+window.addEventListener('scroll', (e) => handleWindowScroll());

@@ -7,12 +7,14 @@ html {
 }
 
 html[theme='light'] {
-    --text-color: rgb(25, 29, 59);
+    --text-color: rgb(56, 60, 96);
     --background: rgb(222, 222, 222);
     
     --text-color-light: rgb(230, 238, 255);
-    --text-color-important: rgb(1, 7, 44);
+    --text-color-important: rgb(0, 8, 63);
     
+    --text-link-color-hovered: #0c4dbc;
+
     --pill-color: #738ce6;
     --pill-color-hovered: #657cd1;
     
@@ -21,17 +23,19 @@ html[theme='light'] {
     
     --experience-color-hovered: #8fb9e4;
 
-    --theme-btn-light: #fff;
     --theme-btn-dark: #000;
+    --theme-btn-light: #fff;
 }
 
 html[theme='dark'] {
-    --text-color: #ebeceb;
+    --text-color: #dcdcdc;
     --background: #1b222b;
     
     --text-color-light: #f8f8f8;
     --text-color-important: white;
-
+    
+    --text-link-color-hovered: #abcaff;
+ 
     --pill-color: #2f5597;
     --pill-color-hovered: #345ea5;
     
@@ -40,8 +44,8 @@ html[theme='dark'] {
     
     --experience-color-hovered: #1f354b4f;
     
-    --theme-btn-light: #000;
     --theme-btn-dark: #fff;
+    --theme-btn-light: #000;
 }
 
 /* https://mwichary.medium.com/dark-theme-in-a-day-3518dde2955a */
@@ -285,6 +289,10 @@ section {
     text-decoration: none;
     min-width: max-content;
     color: var(--text-color-important);
+}
+
+.project-header:hover {
+    color: var(--text-link-color-hovered);
 }
 
 .project-body {
