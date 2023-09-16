@@ -1,5 +1,3 @@
-import { PROJECT_VERSION } from "./constants.js";
-
 import { setTheme, toggleTheme } from "./theme.js";
 
 import { observeIntersections } from "./observer.js";
@@ -174,9 +172,6 @@ window.addEventListener('DOMContentLoaded', function(_) {
     startPhotoLoading();
 
     handleWindowScroll();
-
-    const project_version = document.getElementById('project-version');
-    project_version.textContent = PROJECT_VERSION;
 });
 
 window.addEventListener('scroll', (e) => handleWindowScroll());
