@@ -7,12 +7,14 @@ html {
 }
 
 html[theme='light'] {
-    --text-color: rgb(25, 29, 59);
+    --text-color: rgb(56, 60, 96);
     --background: rgb(222, 222, 222);
     
     --text-color-light: rgb(230, 238, 255);
-    --text-color-important: rgb(1, 7, 44);
+    --text-color-important: rgb(0, 8, 63);
     
+    --text-link-color-hovered: #0c4dbc;
+
     --pill-color: #738ce6;
     --pill-color-hovered: #657cd1;
     
@@ -21,17 +23,19 @@ html[theme='light'] {
     
     --experience-color-hovered: #8fb9e4;
 
-    --theme-btn-light: #fff;
     --theme-btn-dark: #000;
+    --theme-btn-light: #fff;
 }
 
 html[theme='dark'] {
-    --text-color: #ebeceb;
+    --text-color: #dcdcdc;
     --background: #1b222b;
     
     --text-color-light: #f8f8f8;
     --text-color-important: white;
-
+    
+    --text-link-color-hovered: #abcaff;
+ 
     --pill-color: #2f5597;
     --pill-color-hovered: #345ea5;
     
@@ -40,8 +44,8 @@ html[theme='dark'] {
     
     --experience-color-hovered: #1f354b4f;
     
-    --theme-btn-light: #000;
     --theme-btn-dark: #fff;
+    --theme-btn-light: #000;
 }
 
 /* https://mwichary.medium.com/dark-theme-in-a-day-3518dde2955a */
@@ -158,18 +162,18 @@ section {
 /* About */
 .about-section {
     padding-top: 55px;
-    margin-left: 840px;
+    margin-right: 30px;
 }
 
 .about-section > p {
-    width: 650px;
     font-size: 2.2em;
     padding-bottom: 30px;
 }
 
 /* Experience */
 .experience-section {
-    margin-left: 420px;
+    margin-right: 30px;
+    padding-bottom: 30px;
 }
 
 .experience-body {
@@ -190,19 +194,22 @@ section {
 
 .experience-date {
     float: left;
-    padding: 20px;
     margin-top: 12px;
     font-size: 1.75em;
     position: absolute;
     font-style: italic;
     font-weight: normal;
+    padding: 20px 20px 20px 0px;
 }
 
 .experience-skill-container {
-    padding-top: 30px;
+    display: flex;
+    flex-flow: wrap;
+    -ms-flex-flow: wrap;
 }
 
 .experience-skill {
+    margin-top: 25px;
     font-size: large;
     font-weight: bold;
     margin-right: 20px;
@@ -260,18 +267,67 @@ section {
     margin: 20px 20px 20px 0px;
 }
 
+/* Projects */
+.project-section {
+    margin-right: 30px;
+    padding-bottom: 30px;
+}
+
+.project-container {
+    display: block;
+    width: min-content;
+    padding-bottom: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.project-header {
+    font-size: 2.7em;
+    font-weight: normal;
+    margin-bottom: 15px;
+    display: inline-flex;
+    text-decoration: none;
+    min-width: max-content;
+    color: var(--text-color-important);
+}
+
+.project-header:hover {
+    color: var(--text-link-color-hovered);
+}
+
+.project-body {
+    display: flex;
+    width: min-content;
+    margin-left: -30px;
+    flex-direction: row;
+}
+
+.project-details {
+    width: 100%;
+    min-width: 100%;
+    font-size: 1.75em;
+    padding: 0px 30px 0px 30px;
+}
+
+.project-image {
+    width: 100%;
+    min-width: 100%;
+    align-self: center;
+    padding: 0px 30px 0px 30px;
+}
+
 /* Contact */
 .contact-section {
-    margin: 0;
     display: flex;
-    margin-left: 680px;
+    width: max-content;
+    align-self: center;
     flex-direction: column;
     justify-content: center;
 }
 
 .contact-container {
     display: flex;
-    width: fit-content;
+    margin-right: 20px;
     flex-direction: row;
     text-decoration: none;
 }
@@ -295,9 +351,10 @@ section {
 }
 
 .contact-pill {
-    width: 603px;
+    flex-grow: 1;
     padding: 20px;
     text-indent: 6px;
+    max-width: 500px;
     font-size: xx-large;
     text-anchor: middle;
     border-radius: 64px;
