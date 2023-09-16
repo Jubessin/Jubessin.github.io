@@ -6,142 +6,210 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 	  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+	  <link rel="stylesheet" type="text/css" href="./styles/scrollbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <main>
       <!--Navigation Bar-->
-      <nav id="nav" >
-        <div>
-          <h1 class="noselect">Justin Erogun</h1>
-        </div>
-        <div class="icon-container" title="GitHub">
-          <a href="https://github.com/Jubessin" target="_blank" aria-label="GitHub">
-            <button class="icon-button">
-              <img src="./src/icons/github-light.png"/>
-            </button>
-          </a>
-        </div>
-        <div class="icon-container" title="LinkedIn">
-          <a href="https://linkedin.com/in/justin-erogun" target="_blank" aria-label="LinkedIn">
-            <button class="icon-button">
-              <img src="./src/icons/linkedin-light.png"/>
-            </button>
-          </a>
-        </div>
-        <div class="icon-container" title="Email">
-          <a href="mailto:justinerogun@hotmail.com" target="_blank">
-            <button class="icon-button">
-              <img src="./src/icons/email-light.png"/>
-            </button>
-          </a>
-        </div>
+      <nav id="nav" class="noselect">
         <div class="nav-bar">
-          <ul class="nav-link-list noselect">
+          <ul id="nav-list" class="nav-list">
             <li>
-              <a class="nav-link noselect" href="#about">About</a>
+              <a class="nav-link" href="#about">about</a>
             </li>
             <li>
-              <a class="nav-link noselect" href="#experience">Experience</a>
+              <a class="nav-link" href="#experience">experience</a>
             </li>
             <li>
-              <a class="nav-link noselect" href="#projects">Projects</a>
+              <a class="nav-link" href="#projects">projects</a>
             </li>
             <li>
-              <a class="nav-link noselect" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact">contact</a>
             </li>
           </ul>
         </div>
       </nav>
-      <div class="title centered">
-        <h1>Hey, I'm Justin Erogun.</h1>
-      </div>
+      <section class="landing-section">
+        <div id="landing-image-container" class="landing-image-container">
+          <img class="landing-img" src="src/images/ff20bfea876a463016e48c6800205057.jpg"/>
+          <img class="landing-img" src="src/images/3a2fead5210deef4d993b59f229c7f6f.jpg"/>
+          <img class="landing-img" src="src/images/653359f41c72569cb406ceada9744495.jpg"/>
+        </div>
+      </section>
       <!--About-->
-      <div>
-        <section id="about">
-          <h1>About Me</h1>
-          <p>I'm a 4th year student at the University of Guelph majoring in Computer Science with a touch of Philosophy.</p>
-          <p>I've worked with or otherwise have familiarity with languages like C#, C, Java, C++, Python, JavaScript among others.</p>
-          <p>Outside of the world of software you can find me playing basketball, binging shows, writing, and more.</p>
-        </section>
-      </div>
+      <section id="about" class="about-section">
+        <p class="scroll-fade-in-up">Hey, I'm Justin Erogun. I'm a 4<sup>th</sup> year Computer Science student at the University of Guelph, with a minor in Philosophy.</p>
+        <p class="scroll-fade-in-up">Like many others, I started my journey in software development through a passion for video games.</p>
+        <p class="scroll-fade-in-up">It didn't take me long to realize that I love solving challenging problems, 
+            creating beautiful user interfaces, participating in design discussions, and, of course, making games.</p>
+        <p class="scroll-fade-in-up">During my years of univeristy I've begun and completed three successful internships. 
+            I've been nominated for Co-op Student of the Year, won Hack the Northeast: Beyond, and have consistently 
+            been on the Dean's Honours List each semester.</p>
+        <p class="scroll-fade-in-up">When I'm not programming, you might find me playing basketball, watching shows, writing, or otherwise 
+            immersing myself in one among multiple fantasy worlds.</p>
+      </section>
       <!--Experience-->
-      <div>
-        <section id="experience">
-          <h1>Experience</h1>
-          <br/>
-          <h3>Software Developer Intern</h3>
-          <h3>May 2023 - August 2023</h3>
-          <br/>
-          <h4>
-            <a target="_blank" href="https://7dsurgical.com/">7D Surgical</a>
-          </h4>
-          <ul>
-            <li>Executed multiple phases of a large-scale redevelopment project.</li>
-            <li>Lead and initiated design discussions and implemented changes as the primary developer.</li>
-            <li>Established conventions and delivered team-wide presentations.</li>
-          </ul>
+      <section id="experience" class="experience-section">
+        <div class="noselect experience-container scroll-fade-in-up">
+          <span class="experience-date">May — August 2023</span>
+            <a title="Work Term Report" 
+               target="_blank" 
+               href="https://justinerogun.blogspot.com/2023/09/wt3-summer-2023.html" 
+               class="experience-report" 
+               draggable="false"></a>
+            <div class="experience-body " draggable="false">
+            <div>
+              <span class="experience-header">Software Developer Intern @</span> 
+              <a target="_blank" 
+                 href="https://7dsurgical.com/" 
+                 class="experience-employer">7D Surgical</a>
+            </div>
+            <div class="experience-skill-container">
+              <span class="experience-skill">C#</span>
+              <span class="experience-skill">C++/CLI</span>
+              <span class="experience-skill">XAML</span>
+              <span class="experience-skill">WPF</span>
+              <span class="experience-skill">MVVM</span>
+              <span class="experience-skill">Software Design</span>
+              <span class="experience-skill">Software Architecture</span>
+            </div>
+            <p>Executed multiple phases of a large-scale software redevelopment project.</p>
+            <p>Lead and initiated design discussions, and implemented changes as the primary developer.</p>
+            <p>Established conventions and delivered team-wide presentations.</p>
+          </div>
+        </div>
 
-          <h3>Software Developer Intern</h3>
-          <h3>May 2022 - December 2022</h3>
-          <br/>
-          <h4>
-            <a target="_blank" href="https://7dsurgical.com/">7D Surgical</a>
-          </h4>
-          <ul>
-            <li>Used MVVM, WPF, and Figma to fully redesign a major product's backend and frontend layers.</li>
-            <li>Followed the SDLC and practiced agile development across 4 different projects.</li>
-            <li>Wrote technical documentation for multiple deliverables.</li>
-          </ul>
+        <div class="noselect experience-container scroll-fade-in-up">
+          <span class="experience-date">May — December 2022</span>
+          <a target="_blank" 
+             draggable="false"
+             title="Work Term Report" 
+             class="experience-report"
+             href="https://justinerogun.blogspot.com/2023/01/wt1-summer-2022-wt2-fall-2022.html"></a>
+          <div class="experience-body" draggable="false">
+            <div>
+              <span class="experience-header">Software Developer Intern @</span> 
+              <a target="_blank" 
+                 href="https://7dsurgical.com/" 
+                 class="experience-employer">7D Surgical</a>
+            </div>
+            <div class="experience-skill-container">
+              <span class="experience-skill">C#</span>
+              <span class="experience-skill">C++/CLI</span>
+              <span class="experience-skill">XAML</span>
+              <span class="experience-skill">WPF</span>
+              <span class="experience-skill">MVVM</span>
+              <span class="experience-skill">Figma</span>
+            </div>
+            <p>Fully redesigned a major product's backend and frontend layers.</p>
+            <p>Followed the SDLC and practiced agile development across 4 different projects.</p>
+            <p>Wrote technical documentation for multiple deliverables.</p>
+          </div>
+        </div>
 
-          <h3>ASP.NET Intern</h3>
-          <h3>May 2021 - August 2021</h3>
-          <br/>
-          <h4>
-            <a target="_blank" href="https://www.livestockcity.com/">Livestockcity</a>
-          </h4>
-          <ul>
-            <li>Used C#, TypeScript, HTML, and CSS to redefine website UI and UX.</li>
-            <li>Edited HTTP web requests and queried database using C# with LINQ.</li>
-          </ul>
-        </section>
-      </div>
+        <div class="noselect experience-container scroll-fade-in-up">
+          <span class="experience-date">May — August 2021</span>
+          <div class="experience-body" draggable="false">
+            <div>
+              <span class="experience-header">ASP.NET Intern @</span> 
+              <a target="_blank" 
+                 href="https://www.livestockcity.com/" 
+                 class="experience-employer">Livestockcity</a>
+            </div>
+            <div class="experience-skill-container">
+              <span class="experience-skill">C#</span>
+              <span class="experience-skill">HTML</span>
+              <span class="experience-skill">CSS</span>
+              <span class="experience-skill">TypeScript</span>
+            </div>
+            <p>Redefined website UI and UX.</p>
+            <p>Edited HTTP web requests and queried databases.</p>
+          </div>
+        </div>
+      </section>
       <!--Projects-->
-      <div>
-        <section id="projects">
-          <h1>Projects</h1>
-          <br/>
-          <h3>Game Development</h3>
-          <ul>
-            <li>Using Unity and C# to develop a single-player, 2D, RPG, side-scroller game.</li>
-            <li>Employed patterns such as finite-state machines, dependency injection, and behaviour trees.</li>
-          </ul>
+      <section class="project-section" id="projects">
+        <div class="noselect project-container">
+          <a href="https://github.com/Jubessin?tab=repositories&q=com.ikonoclast&type=&language=&sort=" class="project-header scroll-fade-in-up">Game Development</a>
+          <div class="project-body scroll-fade-in-up">
+            <span class="project-details">
+              <p>I've been using Unity and C# to develop a single-player, 2D, RPG, side-scroller game.</p>
+              <p>I've implemented patterns such as finite-state machines, dependency injection, and behaviour trees.</p>
+            </span>
+            <img title="Custom Editor Tool interface." class="project-image" src="content/projects/Game_Development_Asset_Creator.png"/>
+          </div>
+          <div class="project-body scroll-fade-in-up">
+            <img title="Game asset concept art." class="project-image" src="content/projects/Game_Development_katana_w_sheath.png"/>
+            <span class="project-details">
+              <p>I like to use Blender to create game models, and use LMMS for music creation.</p>
+              <p>I also created several additional tools, scripts, and interfaces to better facilitate the game development process.</p>
+            </span>
+          </div>
+        </div>
+          
+        <div class="noselect project-container">
+          <a href="https://github.com/Jubessin/BlenderRenderExporter" class="project-header scroll-fade-in-up">BlenderRenderExporter</a>
+          <div class="project-body scroll-fade-in-up">
+            <img title="Application usage." class="project-image" src="content/projects/BlenderRenderExporter_Menu.PNG"/>
+            <span class="project-details">
+              <p>I created Python scripts to automate batch exporting of Blender keyframes.</p>
+              <p>This tool supports creating base 2D spritesheets, normal maps, and emission maps.</p>
+            </span>
+          </div>
+          <div class="project-body scroll-fade-in-up">
+            <span class="project-details">
+              <p>Spritesheets are exported in batch by keyframe, using specified settings for different render engines.</p>
+              <p>This tool can be useful for creating base, normal, and emission maps all at once.</p>
+            </span>
+            <img title="Example output." class="project-image" src="content/projects/BlenderRenderExporter_Example_Output.png"/>
+          </div>
+        </div>
 
-          <h3>BlenderRenderExporter</h3>
-          <ul>
-            <li>Created Python scripts to automate batch exporting of Blender keyframes.</li>
-            <li>Implemented support for creating base 2D spritesheets, normal maps, and emission maps.</li>
-          </ul>
-
-          <h3>ePortfolio</h3>
-          <ul>
-            <li>Created a GUI using Java Swing and Java AWT for displaying a user's stock portfolio.</li>
-            <li>Handled input/output and loading/saving to files.</li>
-            <li>Applied OOP and polymorphism concepts using Java.</li>
-          </ul>
-        </section>
-      </div>
+        <div class="noselect project-container">
+          <a href="https://github.com/Jubessin/ePortfolio" class="project-header scroll-fade-in-up">ePortfolio</a>
+          <div class="project-body scroll-fade-in-up">
+            <span class="project-details">
+              <p>I created a GUI using Java Swing and Java AWT for displaying a user's stock portfolio.</p>
+              <p>I've implemented input/output and loading/saving to files.</p>
+              <p>This project applies OOP and polymorphism concepts using Java.</p>
+            </span>
+            <img title="ePortfolio interface." class="project-image" src="content/projects/ePortfolio_Interface.png"/>
+          </div>
+        </div>
+      </section>
       <!--Contact-->
-      <div>
-        <section id="contact">
-          <h1>Contact</h1>
-          <p>Feel free to email me with any questions, comments, or updates.</p>
-          <button id="contact-button" class="centered">Email Me</button>
-        </section>
+      <section id="contact" class="noselect contact-section">
+        <div class="scroll-fade-in-up">
+          <div>
+            <a href="mailto:justinerogun@hotmail.com" class="contact-container">
+              <img src="src/icons/email-light.png" class="contact-icon-light"/>
+              <img src="src/icons/email-dark.png" class="contact-icon-dark"/>
+              <p spellcheck="false" class="contact-pill">justinerogun@hotmail.com</p>
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://github.com/Jubessin" class="contact-container">
+              <img src="src/icons/github-light.png" class="contact-icon-light"/>
+              <img src="src/icons/github-dark.png" class="contact-icon-dark"/>
+              <p spellcheck="false" class="contact-pill">https://github.com/Jubessin</p>
+            </a>
+          </div>
+          <div>
+            <a target="_blank" href="https://linkedin.com/in/justin-erogun" class="contact-container">
+              <img src="src/icons/linkedin-light.png" class="contact-icon-light"/>
+              <img src="src/icons/linkedin-dark.png" class="contact-icon-dark"/>
+            <p spellcheck="false" class="contact-pill">https://linkedin/in/justin-erogun</p>
+          </a>
+        </div>
       </div>
-      <div class="project-version-container">
-        <h4 id="project-version" class="noselect"></h4>
-      </div>
+      </section>
+      <button id="theme-btn" class="theme-btn" title="Theme Toggle">
+        <div class="theme-crescent-container">
+          <div class="theme-crescent-light"></div>
+          <div class="theme-crescent-dark"></div>
+        </div>
+      </button>
     </main>
   </body>
   <script type="module" src="src/module.js"></script>

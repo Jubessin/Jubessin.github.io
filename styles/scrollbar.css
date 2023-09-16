@@ -1,0 +1,38 @@
+/* https://www.digitalocean.com/community/tutorials/css-scrollbars */
+
+html[theme='dark'] {
+    --thumb-color: #3c5d8896;
+    --track-color: #12161f;
+}
+
+html[theme='light'] {
+    --thumb-color: #345581;
+    --track-color: #919294;
+}
+
+/* Works on Firefox */
+html, body, main {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumb-color) var(--track-color);
+}
+  
+  /* Works on Chrome, Edge, and Safari */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+main::-webkit-scrollbar {
+    width: 12px;
+}
+  
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+main::-webkit-scrollbar-track {
+    background: var(--track-color);
+}
+  
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: var(--thumb-color);
+    border: 3px solid var(--track-color);
+}
