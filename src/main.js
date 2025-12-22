@@ -1,17 +1,11 @@
 import { setTheme, toggleTheme } from "./theme.js";
 
-import { observeIntersections } from "./observer.js";
-
-import { startPhotoLoading, stopPhotoLoading } from "./photo-loader.js";
-
-const nav = document.querySelector('.nav-bar');
-const themeToggle = document.querySelector('.theme-btn');
 const sections = document.getElementsByTagName('section');
 const scrollInFadeUps = document.querySelectorAll('.scroll-fade-in-up');
 
 function setupThemeToggle() {
     
-    document.getElementById('theme-btn')
+    document.getElementById('theme-button')
             .addEventListener('click', toggleTheme);
 }
 
@@ -40,7 +34,7 @@ function handleWindowScroll() {
 
     if (mostVisible && mostVisible.id) {
         const links = document.querySelectorAll('.nav-link');
-        
+
         links.forEach((link) => {
             link.classList.toggle('active', link.href.endsWith(mostVisible.id));
         });
@@ -143,33 +137,6 @@ window.addEventListener('DOMContentLoaded', function(_) {
     setupNavigationBar();
     
     setTheme(window.localStorage.getItem('theme'));
-
-    observeIntersections(
-        this.document.querySelectorAll('.landing-image-container'),
-        {
-            threshold: [0.1, 0.25],
-            rootMargin: '50px'
-        },
-        (entry) => { 
-
-            let element = entry.target;
-
-            if (entry.isIntersecting) {
-                if (window.scrollY >= ((element.offsetHeight) - window.innerHeight)) {
-                    startPhotoLoading();
-                    nav.classList.remove('visible');
-                    themeToggle.classList.remove('visible');
-                }
-            }
-            else  {
-                stopPhotoLoading();
-                nav.classList.add('visible');
-                themeToggle.classList.add('visible');
-            }
-        },
-    );
-
-    startPhotoLoading();
 
     handleWindowScroll();
 });

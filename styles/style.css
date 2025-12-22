@@ -24,8 +24,8 @@ html[theme='light'] {
     
     --experience-color-hovered: #8fb9e4;
 
-    --theme-btn-dark: #000;
-    --theme-btn-light: #fff;
+    --theme-button-dark: #000;
+    --theme-button-light: #fff;
 }
 
 html[theme='dark'] {
@@ -46,8 +46,8 @@ html[theme='dark'] {
     
     --experience-color-hovered: #1f354b4f;
     
-    --theme-btn-dark: #fff;
-    --theme-btn-light: #000;
+    --theme-button-dark: #fff;
+    --theme-button-light: #000;
 }
 
 /* https://mwichary.medium.com/dark-theme-in-a-day-3518dde2955a */
@@ -79,6 +79,8 @@ body {
 }
 
 nav {
+    top: 0px;
+    left: 0px;
     height: 100%;
     display: flex;
     position: fixed;
@@ -97,16 +99,8 @@ section {
 
 /* Navigation Bar */
 .nav-bar {
-    opacity: 0;
     margin-left: 28px;
-    visibility: hidden;
-    margin-bottom: 10px;
-    transition: opacity 500ms linear, visibility 500ms linear;
-}
-
-.nav-bar.visible {
-    opacity: 1;
-    visibility: visible;
+    margin-bottom: 50px;
 }
 
 .nav-list {
@@ -122,6 +116,7 @@ section {
     opacity: 1;
 }
 
+.profile-nav-link,
 .nav-link {
     float: left;
     font-size: 48px;
@@ -131,33 +126,21 @@ section {
     color: var(--text-color-important);
 }
 
+.profile-nav-link {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
 .nav-link.active {
     font-weight: bold;
 }
 
-/* Landing */
-.landing-section {
-    padding: 0;
-    height: 100%;
-    display: flex;
-    margin-left: 30px;
-    align-items: center;
-    flex-direction: column;
-}
-
-.landing-image-container {
-    width: 100%;
-    display: flex;
-    min-height: inherit;
-}
-
-.landing-img {
-    width: 33%;
-    margin: 30px;
-    display: flex;
+.profile-img {
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 2px;
-    transition: opacity 1s linear;
+    border-radius: 50%;
 }
 
 /* About */
@@ -365,31 +348,22 @@ section {
 }
 
 /* Theme Button */
-.theme-btn {
-    opacity: 0;
-    left: 60px;
+.theme-button {
     width: 50px;
     height: 50px;
-    bottom: 20px;
     display: flex;
     cursor: pointer;
     position: fixed;
-    visibility: hidden;
     border: 0px solid transparent;
     background-color: transparent;
-    transition: opacity 500ms linear, visibility 500ms linear;
-}
-
-.theme-btn.visible {
-    opacity: 1;
-    visibility: visible;
 }
 
 .theme-crescent-container {
-    left: 60px;
+    left: 68px;
     bottom: 20px;
     display: flex;
     position: fixed;
+    object-fit: cover;
     flex-direction: row;
     transition: bottom 0.3s;
 }
@@ -397,23 +371,22 @@ section {
 .theme-crescent-light {
     width: 50px;
     height: 50px;
+    border-radius: 50%;
     border: 0px solid transparent;
-    border-radius: 150px 150px 150px 150px;
-    background-color: var(--theme-btn-light);
+    background-color: var(--theme-button-dark);
 }
 
 .theme-crescent-dark {
-    left: 25px;
-    width: 24px;
-    height: 48px;
-    margin-top: 1px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     border: 0px solid transparent;
-    border-radius: 0px 150px 150px 0px;
-    background-color: var(--theme-btn-dark);
+    border-radius: 50%;
+    background-color: var(--theme-button-light);
 }
 
-.theme-btn:hover > .theme-crescent-container {
+.theme-button:hover > .theme-crescent-container {
     bottom: 25px;
     transition: bottom 0.3s;
     transition-delay: 0 !important;
