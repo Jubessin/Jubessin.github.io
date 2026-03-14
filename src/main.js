@@ -43,7 +43,7 @@ function handleWindowScroll() {
     scrollInFadeUps.forEach((element) => {
         let visiblePercent = getVisibleHeightPercent(element, window.innerHeight);
 
-        if (visiblePercent >= 0.5 || 
+        if (visiblePercent >= 0.4 || 
             (window.scrollY >= (element.offsetTop + element.scrollHeight - window.innerHeight))) {
             element.classList.add('scroll-fade-in-up-active');
         }

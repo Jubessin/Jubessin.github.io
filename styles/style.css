@@ -157,7 +157,6 @@ section {
 
 .about-section > p {
     font-size: 2.2em;
-    padding-bottom: 30px;
 }
 
 /* Experience */
@@ -173,13 +172,12 @@ section {
 
 .experience-container {
     width: max-content;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 
 .experience-body {
     text-decoration: none;
     color: var(--text-color);
-    padding: 20px 0px 5px 0px;
 }
 
 .experience-header,
@@ -206,6 +204,13 @@ section {
     font-size: 1.75em;
     font-style: italic;
     font-weight: normal;
+}
+
+.experience-past {
+    opacity: 0.75;
+    font-size: 1.25em;
+    font-style: italic;
+    font-weight: lighter;
 }
 
 .experience-skill-container {
